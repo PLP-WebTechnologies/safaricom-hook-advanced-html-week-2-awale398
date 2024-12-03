@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            max-width: 600px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .radio-group {
+            display: flex;
+            justify-content: space-between;
+        }
+        .terms {
+            display: flex;
+            align-items: center;
+        }
+        .terms input {
+            width: auto;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form action="submit_registration.php" method="POST">
+        <!-- Full Name -->
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" required maxlength="100" placeholder="Enter your full name">
+
+        <!-- Email Address -->
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+
+        <!-- Password -->
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required minlength="8" placeholder="Enter a password (min 8 characters)">
+
+        <!-- Age -->
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" required min="18" placeholder="Enter your age">
+
+        <!-- Gender -->
+        <label>Gender</label>
+        <div class="radio-group">
+            <label><input type="radio" name="gender" value="Male" required> Male</label>
+            <label><input type="radio" name="gender" value="Female" required> Female</label>
+            <label><input type="radio" name="gender" value="Other" required> Other</label>
+        </div>
+
+        <!-- Terms and Conditions -->
+        <div class="terms">
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I agree to the terms and conditions</label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
